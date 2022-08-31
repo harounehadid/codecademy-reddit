@@ -1,0 +1,12 @@
+.Header {
+    background-color: var(--bg-color1);
+    height: 50px;
+}
+
+.Header-logo {
+    height: 50px;
+}
+
+.Header-home-btn {
+
+}
