@@ -15,3 +15,21 @@ code {
 ul {
   list-style: none;
 }
+
+/* >_ Styling Choices */
+:root {
+  /* >_ Color Choices */
+  --color1: #0079d3;
+  --color2: #ff4500;
+  --color3: #46d160;
+  --color4: #8d9092;
+  --bg-color1: white;
+  --bg-color2: #dae0e6;
+  --bg-color3: #f6f7f8;
+  --text-color1: #1c1c1c;
+  --text-color2: #878a8c;
+}
+
+.center {
+  margin: 0 auto;
+}
