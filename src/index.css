@@ -1,4 +1,9 @@
 /* >_ Set */
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,6 +26,7 @@ ul {
 button {
   background-color: var(--bg-color1);
   border: none;
+  border-radius: var(--unified-border-radius);
 }
 
 /* >_ Styling Choices */
@@ -35,18 +41,18 @@ button {
   --bg-color3: #f6f7f8;
   --text-color1: #1c1c1c;
   --text-color2: #878a8c;
+  /* Layout Choices */
+  --header-height: 50px;
+  --unified-border-radius: 3px;
 }
 
+/* >_ Unified Rules */
 .center {
   margin: 0 auto;
 }
 
-.fill-container-width {
+.fill-screen-width {
   width: 100%;
-}
-
-.fill-container-height {
-  height: 100%;
 }
 
 .flex-diplay {
