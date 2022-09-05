@@ -23,7 +23,7 @@ const Header = () => {
                 <img src={Icons.dropDown} alt='' className='Header-home-btn-dropdown-icon' />
             </button>
             
-            {/*<Searchbar />*/}
+            <Searchbar />
         </div>
     );
 }
