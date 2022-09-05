@@ -29,6 +29,10 @@ button {
   border-radius: var(--unified-border-radius);
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* >_ Styling Choices */
 :root {
   /* >_ Color Choices */
