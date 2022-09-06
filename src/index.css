@@ -37,6 +37,10 @@ input {
   background-color: var(--bg-color3);
 }
 
+input:focus {
+  outline: 1px solid black;
+}
+
 /* >_ Styling Choices */
 :root {
   /* >_ Color Choices */
