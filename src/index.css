@@ -52,8 +52,8 @@ input {
   --border-color1: #edeff1;
   --border-color2: #cccccc;
   /* Layout Choices */
-  --header-height: 50px;
-  --unified-border-radius: 3px;
+  --header-height: 47px;
+  --unified-border-radius: 4px;
 }
 
 /* >_ Unified Rules */
