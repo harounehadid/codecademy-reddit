@@ -49,6 +49,8 @@ input {
   --bg-color3: #f6f7f8;
   --text-color1: #1c1c1c;
   --text-color2: #878a8c;
+  --border-color1: #edeff1;
+  --border-color2: #cccccc;
   /* Layout Choices */
   --header-height: 50px;
   --unified-border-radius: 3px;
