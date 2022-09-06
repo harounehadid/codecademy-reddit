@@ -1,7 +1,29 @@
 .Searchbar {
-    background-color: var(--bg-color3);
+    position: relative;
+    width: 58%;
+    height: calc(var(--header-height) * .73);
+    margin-left: 15px;
 }
 
 .Searchbar-icon {
-    
+    position: absolute;
+    left: 15px;
+}
+
+.Searchbar-input {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-color3);
+    padding-left: calc(var(--header-height) - 3px);
+}
+
+.Searchbar-input:hover {
+    border: 1px solid var(--color1);
+    background-color: var(--bg-color1);
+}
+
+.Searchbar-input:focus {
+    outline: none;
+    border: 1px solid var(--color1);
+    background-color: var(--bg-color1);
 }
