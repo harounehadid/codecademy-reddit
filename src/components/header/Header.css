@@ -1,6 +1,7 @@
 .Header {
     background-color: var(--bg-color1);
     height: var(--header-height);
+    border: 1px solid var(--border-color1);
 }
 
 .Header-logo {
