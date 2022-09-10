@@ -1,0 +1,20 @@
+.Post {
+    position: relative;
+    background-color: var(--bg-color1);
+    width: 643px;
+    height: 626px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.Post-vote-section {
+    position: absolute;
+    left: 0;
+    width: 6.5%;
+    height: 100%;
+    background-color: var(--bg-color3);
+}
+
+.Post-display-info {
+
+}
