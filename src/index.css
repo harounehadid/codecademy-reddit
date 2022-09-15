@@ -49,6 +49,14 @@ input:focus {
   outline: 1px solid black;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: var(--bg-color4);
+}
+
 /* >_ Styling Choices */
 :root {
   /* >_ Color Choices */
@@ -59,6 +67,7 @@ input:focus {
   --bg-color1: white;
   --bg-color2: #dae0e6;
   --bg-color3: #f6f7f8;
+  --bg-color4: #e8e8e8;
   --text-color1: #1c1c1c;
   --text-color2: #222222;
   --text-color3: #878a8c;
