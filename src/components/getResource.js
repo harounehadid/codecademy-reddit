@@ -12,3 +12,7 @@ export const Icons = {
     comment: require('../resources/comment-icon.svg').default,
     share: require('../resources/share-icon.svg').default
 };
+
+export const Elements = {
+    fade: require('../resources/fade.svg').default
+};
