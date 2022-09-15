@@ -1,17 +1,15 @@
 .Post {
-    position: relative;
     background-color: var(--bg-color1);
-    width: 643px;
-    height: 626px;
+    width: 638px;
+    min-height: 165px;
+    max-height: fit-content;
     margin: 0 auto;
     margin-top: 20px;
 }
 
 .Post-vote-section {
-    position: absolute;
-    left: 0;
     width: 6.5%;
-    height: 100%;
+    min-height: 100%;
     background-color: var(--bg-color3);
 }
 
@@ -30,6 +28,74 @@
     font-weight:600;
 }
 
+/* <> -------------------------------------- */
 .Post-display-info {
-
+    width: 100%;
+    margin-left: 7px;
+    margin-right: 7px;
 }
+/* << --------------------------------- */
+.Post-publishing-info {
+    width: 100%;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+
+.Post-publishing-info p {
+    font-size: .75em;
+    margin-left: 4px;
+}
+
+.Post-subreddit-pic {
+    width: 22px;
+}
+
+.Post-subreddit-name {
+    font-weight: bold;
+}
+
+.Post-publishing-extra-info {
+    color: var(--text-color3);
+}
+/* << --------------------------------- */
+.Post-title {
+    font-weight: bold;
+    margin-bottom: 14px;
+}
+/* << --------------------------------- */
+.Post-content {
+    position: relative;
+    font-size: .875em;
+    text-justify: center;
+    margin-bottom: 14px;
+}
+
+.Post-fade {
+
+    position: absolute;
+    bottom: 0;
+}
+/* << -------------------------------- */
+.Post-actions {
+    margin-bottom: 2px;
+    height: 35px;
+}
+
+.Post-actions a {
+    width: fit-content;
+    height: 100%;
+}
+
+.Post-actions img {
+    width: 18px;
+    margin-left: 6px;
+}
+
+.Post-actions p {
+    font-size: .8125em;
+    font-weight: 600;
+    color: var(--text-color3);
+    margin-left: 5px;
+    margin-right: 10px;
+}
+/* ------------------------------------ */
