@@ -1,7 +1,9 @@
 import './Post.css';
 import { Icons, Elements } from '../getResource';
 
-const Post = () => {
+const Post = props => {
+    let { title } = props;
+
     const postURL = 'reddit.com';
 
     return (
@@ -31,7 +33,7 @@ const Post = () => {
                     <p className='Post-publishing-extra-info'>13 hours ago</p>
                 </div>
 
-                <p className='Post-title'>MySQL Database Update W/out Loading a new page</p>
+                <p className='Post-title'>{title}</p>
 
                 <div className='Post-content'>
                     <p>
