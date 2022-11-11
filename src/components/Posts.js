@@ -16,18 +16,33 @@ const Posts = () => {
         fetch(url)
         .then(response => response.json())
         .then(body => {
-            let newPostsData = body.data.children.map(postData => {
+            let newPostsData = body.data.children.map(fetchedPost => {
                 let data = {};
 
-                data.title = postData.data.title;
-                data.id = postData.data.id;
+                data.id = fetchedPost.data.id;
+
+                data.sbrNamePrefixed = fetchedPost.data.subreddit_name_prefixed;
+                data.authorName = fetchedPost.data.author;
+                data.time = fetchedPost.data.created_utc;
+
+                data.thumbnail = fetchedPost.data.thumbnail;
+
+                data.title = fetchedPost.data.title;
+                
+                data.ups = fetchedPost.data.ups;
+
+                data.commentsNum = fetchedPost.data.num_comments;
                 
                 return data;
             });
 
             setPostsData(newPostsData);
+
+            console.log(body.data.children[0]);
         })
         .catch(error => console.log(error));
+
+        
 
     }, []);
     
@@ -46,7 +61,17 @@ const Posts = () => {
                         margin-center'>
 
             {
-                postsData.map(postData => <Post key={postData.id} title={postData.title} />)
+                postsData.map(postData => <Post 
+                                            key={postData.id} 
+                                            id={postData.id}
+                                            thumbnail={postData.thumbnail}
+                                            sbrNamePrefixed={postData.sbrNamePrefixed}
+                                            authorName={postData.authorName}
+                                            time={postData.time}
+                                            title={postData.title} 
+                                            ups={postData.ups}
+                                            commentsNum={postData.commentsNum}
+                                            />)
             }
 
         </div>

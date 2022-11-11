@@ -2,7 +2,7 @@ import './Post.css';
 import { Icons, Elements } from '../getResource';
 
 const Post = props => {
-    let { title } = props;
+    let { thumbnail, sbrNamePrefixed, authorName, time, title, ups, commentsNum } = props;
 
     const postURL = 'reddit.com';
 
@@ -15,7 +15,7 @@ const Post = props => {
                             flex-vertical-center
                             flex-column-direction'>
                 <img src={Icons.voteUp} alt='vote up' />
-                <p>1</p>
+                <p>{ups}</p>
                 <img src={Icons.voteDown} alt='vote down' />
             </div>
 
@@ -24,12 +24,12 @@ const Post = props => {
                 <div className='flex-diplay
                                 flex-vertical-center
                                 Post-publishing-info'>
-                    <img src={require('../../resources/fake-data/post1/profile1-pic.jpg')} 
+                    <img src={require('../../resources/subreddit-dpp.svg').default} 
                          alt='' 
                          className='Post-subreddit-pic'/>
-                    <p className='Post-subreddit-name'>r/PHPhelp</p>
+                    <p className='Post-subreddit-name'>{sbrNamePrefixed}</p>
                     <p className='Post-publishing-extra-info'>.</p>
-                    <p className='Post-publishing-extra-info'>Posted by u/Non_possumus_vincere</p>
+                    <p className='Post-publishing-extra-info'>Posted by u/{authorName}</p>
                     <p className='Post-publishing-extra-info'>13 hours ago</p>
                 </div>
 
@@ -56,7 +56,7 @@ const Post = props => {
                                   flex-diplay
                                   flex-vertical-center'>
                         <img src={Icons.comment} alt='comment' />
-                        <p>6 comments</p>
+                        <p>{commentsNum} comments</p>
                     </a>
                     <a href={postURL}
                        className='Post-share
