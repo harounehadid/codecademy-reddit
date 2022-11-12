@@ -23,9 +23,9 @@
 }
 
 .Post-vote-section p {
-    font-size: .8125em;
+    font-size: .86em;
+    font-weight: 700;
     padding-bottom: 2px;
-    font-weight:600;
 }
 
 /* <> -------------------------------------- */
@@ -36,13 +36,13 @@
 }
 /* << --------------------------------- */
 .Post-publishing-info {
+    font-size: .86em;
     width: 100%;
     margin-top: 7px;
     margin-bottom: 7px;
 }
 
 .Post-publishing-info p {
-    font-size: .75em;
     margin-left: 4px;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .Post-subreddit-name {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .Post-publishing-extra-info {
@@ -59,13 +59,13 @@
 }
 /* << --------------------------------- */
 .Post-title {
-    font-weight: bold;
+    font-size: 1.29em;
+    font-weight: 500;
     margin-bottom: 14px;
 }
 /* << --------------------------------- */
 .Post-content {
     position: relative;
-    font-size: .875em;
     text-justify: center;
     margin-bottom: 5px;
 }
@@ -77,6 +77,8 @@
 }
 /* << -------------------------------- */
 .Post-actions {
+    font-size: .86em;
+    font-weight: 700;
     margin-bottom: 2px;
     height: 35px;
 }
@@ -91,9 +93,7 @@
     margin-left: 6px;
 }
 
-.Post-actions p {
-    font-size: .8125em;
-    font-weight: 600;
+.Post-actions p {    
     color: var(--text-color3);
     margin-left: 5px;
     margin-right: 10px;

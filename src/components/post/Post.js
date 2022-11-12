@@ -13,7 +13,8 @@ const Post = props => {
             <div className='Post-vote-section
                             flex-diplay
                             flex-vertical-center
-                            flex-column-direction'>
+                            flex-column-direction
+                            secondary-font'>
                 <img src={Icons.voteUp} alt='vote up' />
                 <p>{ups}</p>
                 <img src={Icons.voteDown} alt='vote down' />
@@ -23,9 +24,10 @@ const Post = props => {
                 
                 <div className='flex-diplay
                                 flex-vertical-center
-                                Post-publishing-info'>
+                                Post-publishing-info
+                                secondary-font'>
                     <img src={require('../../resources/subreddit-dpp.svg').default} 
-                         alt='' 
+                         alt='subreddit icon' 
                          className='Post-subreddit-pic'/>
                     <p className='Post-subreddit-name'>{sbrNamePrefixed}</p>
                     <p className='Post-publishing-extra-info'>.</p>
@@ -33,7 +35,10 @@ const Post = props => {
                     <p className='Post-publishing-extra-info'>13 hours ago</p>
                 </div>
 
-                <p className='Post-title'>{title}</p>
+                <p className='Post-title
+                              secondary-font'>
+                    {title}
+                </p>
 
                 <div className='Post-content'>
                     <p>
@@ -50,7 +55,8 @@ const Post = props => {
 
                 <div className='Post-actions
                                 flex-diplay
-                                flex-vertical-center'>
+                                flex-vertical-center
+                                secondary-font'>
                     <a href={postURL}
                        className='Post-comment
                                   flex-diplay
