@@ -1,29 +1,42 @@
 import Searchbar from '../../features/searchbar/Searchbar';
 import { Logo, Icons } from '../getResource';
-import './Header.css';
+import styles from './Header.module.css';
 
 const Header = () => {
     return (
-        <div className='Header
+        <div className={`${styles['header']}
                         center
                         fill-screen-width
                         flex-diplay
-                        flex-vertical-center'>
+                        flex-vertical-center`}>
 
-            <a href='reddit.com'>
-                <img src={Logo.reddit} alt='Reddit Logo' className='Header-logo' />
-            </a>
-
-            <button alt='Home Button Drop Down'
-                    className='Header-home-btn
-                               flex-diplay
-                               flex-vertical-center'>
-                <img src={Icons.home} alt='' className='Header-home-btn-home-icon' />
-                <p>Home</p>
-                <img src={Icons.dropDown} alt='' className='Header-home-btn-dropdown-icon' />
-            </button>
+            <img src={Logo.reddit} alt='Reddit Logo' className={`${styles['logo']}`} />
             
             <Searchbar />
+
+            <nav className={`flex-diplay`}>
+                <a href='##'
+                   className={`${styles['btn']}
+                               flex-diplay
+                               flex-horizontal-center
+                               flex-vertical-center`}
+                               >
+                    <img src={Icons.home} alt='' className={`${styles['home-btn-home-icon']}`} />
+                    <p>Home</p>
+                </a>
+
+                <a href='https://www.reddit.com'
+                   target='_blank'
+                   rel='noreferrer'
+                   className={`${styles['go-to-reddit']} 
+                               ${styles['btn']}
+                               flex-diplay
+                               flex-horizontal-center
+                               flex-vertical-center`}
+                   >    
+                    Go to Reddit
+                </a>
+            </nav>
         </div>
     );
 }

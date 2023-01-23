@@ -1,11 +1,10 @@
 
 export const Logo = {
-    reddit: require('../resources/reddit-logo.jpg')
+    reddit: require('../resources/gdor-icon.png')
 };
 
 export const Icons = {
     home: require('../resources/home-icon.svg').default,
-    dropDown: require('../resources/drop-down.svg').default,
     searchbar: require('../resources/search-icon.svg').default,
     voteUp: require('../resources/vote-up-icon.svg').default,
     voteDown: require('../resources/vote-down-icon.svg').default,

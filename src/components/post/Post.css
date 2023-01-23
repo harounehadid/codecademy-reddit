@@ -1,101 +1,128 @@
-.Post {
-    background-color: var(--bg-color1);
-    width: 638px;
-    min-height: 165px;
-    max-height: fit-content;
-    margin: 0 auto;
-    margin-top: 20px;
+/* >> Reusable rules ----------------------- */
+.Post .flex-display {
+    display: flex;
 }
 
-.Post-vote-section {
-    width: 6.5%;
+.Post .flex-horizontal-center {
+    justify-content: center;
+}
+
+.Post .flex-vertical-center {
+    align-items: center;
+}
+
+.Post .margin-vertical-center {
+    margin: 0 auto;
+}
+
+.Post .secondary-font-family {
+    font-family: var(--font-family2);   
+}
+
+/* >> Main container ----------------------- */
+.Post {
+    position: relative;
+    background-color: var(--bg-color1);
+    width: 640px;
+    height: fit-content;
+    margin-bottom: 10px;
+}
+
+/* >> Vote section -------------------------- */
+.Post .vote-section {
+    flex-direction: column;
+    width: 40px;
     min-height: 100%;
     background-color: var(--bg-color3);
 }
 
-.Post-vote-section img:first-child {
+.Post .vote-section img:first-child {
     padding-top: 5px;
 }
 
-.Post-vote-section img {
+.Post .vote-section img {
     width: 19px;
     margin: 5px 0;
 }
 
-.Post-vote-section p {
+.Post .vote-section p {
     font-size: .86em;
     font-weight: 700;
     padding-bottom: 2px;
 }
 
-/* <> -------------------------------------- */
-.Post-display-info {
+/* >> Publishing info -------------------------------------- */
+.Post .display-info {
     width: 100%;
-    margin-left: 7px;
-    margin-right: 7px;
+    padding-left: 7px;
+    padding-right: 7px;
 }
-/* << --------------------------------- */
-.Post-publishing-info {
+
+.Post .publishing-info {
     font-size: .86em;
     width: 100%;
     margin-top: 7px;
     margin-bottom: 7px;
 }
 
-.Post-publishing-info p {
+.Post .publishing-info p {
     margin-left: 4px;
 }
 
-.Post-subreddit-pic {
+.Post .subreddit-pic {
     width: 22px;
 }
 
-.Post-subreddit-name {
+.Post .subreddit-name {
     font-weight: 700;
 }
 
-.Post-publishing-extra-info {
+.Post .publishing-extra-info {
     color: var(--text-color3);
 }
-/* << --------------------------------- */
-.Post-title {
+
+/* >> ---------------------------------- */
+.Post .title {
     font-size: 1.29em;
     font-weight: 500;
     margin-bottom: 14px;
 }
-/* << --------------------------------- */
-.Post-content {
+
+/* >> Content container ---------------------------------- */
+.Post .content {
+    margin: 0 auto;
     position: relative;
-    text-justify: center;
     margin-bottom: 5px;
+    max-width: 100%;
+    max-height: 512px;
 }
 
-.Post-fade {
-
+/* >> --------------------------------- */
+.Post .text-fade {
     position: absolute;
     bottom: 0;
 }
-/* << -------------------------------- */
-.Post-actions {
+
+/* >> --------------------------------- */
+.Post .actions {
     font-size: .86em;
     font-weight: 700;
     margin-bottom: 2px;
     height: 35px;
 }
 
-.Post-actions a {
+.Post .actions a {
     width: fit-content;
     height: 100%;
 }
 
-.Post-actions img {
+.Post .actions img {
     width: 18px;
     margin-left: 6px;
 }
 
-.Post-actions p {    
+.Post .actions p {    
     color: var(--text-color3);
     margin-left: 5px;
     margin-right: 10px;
 }
-/* ------------------------------------ */

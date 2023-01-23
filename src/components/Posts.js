@@ -2,7 +2,7 @@ import Post from "./post/Post";
 import { useState, useEffect } from "react";
 
 const Posts = () => {
-    let url = `https://www.reddit.com/r/memes.json`;
+    let url = `https://www.reddit.com/r/Frontend.json`;
 
     const handleScroll = () => {
         const atBottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
@@ -19,13 +19,21 @@ const Posts = () => {
             let newPostsData = body.data.children.map(fetchedPost => {
                 let data = {};
 
+                console.log(fetchedPost.data);
+
                 data.id = fetchedPost.data.id;
+
+                data.postType = fetchedPost.data.post_hint;
+
+                data.thumbnail = fetchedPost.data.thumbnail;
+                
+                data.selftext = fetchedPost.data.selftext;
+                data.url = fetchedPost.data.url;
+                data.media = fetchedPost.data.url_overridden_by_dest;
 
                 data.sbrNamePrefixed = fetchedPost.data.subreddit_name_prefixed;
                 data.authorName = fetchedPost.data.author;
                 data.time = fetchedPost.data.created_utc;
-
-                data.thumbnail = fetchedPost.data.thumbnail;
 
                 data.title = fetchedPost.data.title;
                 
@@ -37,8 +45,6 @@ const Posts = () => {
             });
 
             setPostsData(newPostsData);
-
-            console.log(body.data.children[0]);
         })
         .catch(error => console.log(error));
 
@@ -65,12 +71,15 @@ const Posts = () => {
                                             key={postData.id} 
                                             id={postData.id}
                                             thumbnail={postData.thumbnail}
+                                            selftext={postData.selftext}
+                                            media={postData.media}
                                             sbrNamePrefixed={postData.sbrNamePrefixed}
                                             authorName={postData.authorName}
                                             time={postData.time}
                                             title={postData.title} 
                                             ups={postData.ups}
                                             commentsNum={postData.commentsNum}
+                                            postType={postData.postType}
                                             />)
             }
 

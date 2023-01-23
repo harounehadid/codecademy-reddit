@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -51,9 +52,9 @@ a:hover {
   background-color: var(--bg-color4);
 }
 
-/* >_ Styling Choices */
+/* >> Styling Choices */
 :root {
-  /* >_ Color Choices */
+  /* >> Color Choices */
   --color1: #0079d3;
   --color2: #ff4500;
   --color3: #46d160;
@@ -68,8 +69,11 @@ a:hover {
   --border-color1: #edeff1;
   --border-color2: #cccccc;
   /* Layout Choices */
-  --header-height: 47px;
+  --header-height: 70px;
   --unified-border-radius: 4px;
+  /* >> */
+  --font-family1: 'Noto Sans', Arial, sans-serif;
+  --font-family2: 'IBM Plex Sans', sans-serif;
 }
 
 .secondary-font {
@@ -107,5 +111,4 @@ a:hover {
 
 .align-text-center {
   text-align: center;
-  border: 1px solid black;
 }

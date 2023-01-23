@@ -2,75 +2,86 @@ import './Post.css';
 import { Icons, Elements } from '../getResource';
 
 const Post = props => {
-    let { thumbnail, sbrNamePrefixed, authorName, time, title, ups, commentsNum } = props;
+    let { postType, 
+          thumbnail, 
+          selftext,
+          url,
+          media, 
+          sbrNamePrefixed, 
+          authorName, 
+          time, 
+          title, 
+          ups, 
+          commentsNum } = props;
 
     const postURL = 'reddit.com';
 
     return (
         <div className='Post
-                        flex-diplay'>
+                        flex-diplay
+                        margin-center'>
 
-            <div className='Post-vote-section
-                            flex-diplay
+            <div className='vote-section
+                            flex-display
                             flex-vertical-center
-                            flex-column-direction
-                            secondary-font'>
+                            secondary-font-family'>
+
                 <img src={Icons.voteUp} alt='vote up' />
                 <p>{ups}</p>
                 <img src={Icons.voteDown} alt='vote down' />
+
             </div>
 
-            <div className='Post-display-info'>
+            <div className='display-info'>
                 
-                <div className='flex-diplay
+                <div className='publishing-info
+                                flex-display
                                 flex-vertical-center
-                                Post-publishing-info
-                                secondary-font'>
+                                secondary-font-family'>
+
                     <img src={require('../../resources/subreddit-dpp.svg').default} 
                          alt='subreddit icon' 
-                         className='Post-subreddit-pic'/>
-                    <p className='Post-subreddit-name'>{sbrNamePrefixed}</p>
-                    <p className='Post-publishing-extra-info'>.</p>
-                    <p className='Post-publishing-extra-info'>Posted by u/{authorName}</p>
-                    <p className='Post-publishing-extra-info'>13 hours ago</p>
+                         className='subreddit-pic'/>
+                    <p className='subreddit-name'>{sbrNamePrefixed}</p>
+                    <p className='publishing-extra-info'>.</p>
+                    <p className='publishing-extra-info'>Posted by u/{authorName}</p>
+                    <p className='publishing-extra-info'>13 hours ago</p>
+
                 </div>
 
-                <p className='Post-title
+                <p className='title
                               secondary-font'>
                     {title}
                 </p>
 
-                <div className='Post-content'>
-                    <p>
-                        I have a mysql database which is accessed with php. My new idea is that I want to be able to send 
-                        a database query without loading / reloading my page. (I have five boxes, and when I click on Box n, 
-                        I want to query mysql without reloading the page. (There may be other information in Boxes !n that 
-                        I am not ready to navigate away from.)<br></br><br></br>
-                        What's the best way to do this? Javascript to open invisible iframes and load PHP pages with mysql 
-                        queries in those iframes?
-                    </p>
+                <div className='content
+                                flex-diplay'>
+                    {media && <a href={url}>{media}</a>}
+                    {selftext && <p>{selftext}</p>}
 
-                    <img className='Post-fade' src={Elements.fade} alt='' />
+                    {selftext && <img className='text-fade' src={Elements.fade} alt='' />}
                 </div>
 
-                <div className='Post-actions
+                <div className='actions
                                 flex-diplay
                                 flex-vertical-center
-                                secondary-font'>
+                                secondary-font-family'>
+
                     <a href={postURL}
-                       className='Post-comment
+                       className='comment
                                   flex-diplay
                                   flex-vertical-center'>
                         <img src={Icons.comment} alt='comment' />
                         <p>{commentsNum} comments</p>
                     </a>
                     <a href={postURL}
-                       className='Post-share
+                       className='share
                                   flex-diplay
                                   flex-vertical-center'>
                         <img src={Icons.share} alt='share' />
                         <p>share</p>
                     </a>
+
                 </div>
                 
             </div>
