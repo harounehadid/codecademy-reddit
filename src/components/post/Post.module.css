@@ -1,0 +1,89 @@
+.secondary-font-family {
+    font-family: var(--font-family2);   
+}
+
+/* >> Main container ----------------------- */
+.post {
+    position: relative;
+    background-color: var(--bg-color1);
+    width: 640px;
+    height: fit-content;
+    margin-bottom: 14px;
+}
+
+/* >> Vote section -------------------------- */
+.vote-section {
+    flex-direction: column;
+    width: 44px;
+    min-height: 100%;
+    background-color: var(--bg-color3);
+}
+
+.vote-section img:first-child {
+    padding-top: 5px;
+}
+
+.vote-section img {
+    width: 19px;
+    margin: 5px 0;
+}
+
+.vote-section p {
+    font-size: .86em;
+    font-weight: 700;
+    padding-bottom: 2px;
+}
+
+/* >> Publishing info -------------------------------------- */
+.display-info {
+    width: 100%;
+}
+
+.publishing-extra-info {
+    color: var(--text-color3);
+    font-weight: 400;
+}
+
+/* >> ---------------------------------- */
+.title {
+    font-size: 1.29em;
+    font-weight: 500;
+    margin-bottom: 14px;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+/* >> Content container ---------------------------------- */
+.content {
+    margin: 0 auto;
+    position: relative;
+    margin-bottom: 5px;
+    max-width: 100%;
+    max-height: 512px;
+}
+
+/* >> --------------------------------- */
+.actions {
+    font-size: .86em;
+    font-weight: 500;
+    margin-bottom: 2px;
+    height: 35px;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.comment {
+    width: fit-content;
+    height: 100%;
+}
+
+.comment img {
+    width: 17px;
+}
+
+.comment p {    
+    color: var(--text-color3);
+    margin-left: 5px;
+    margin-right: 5px;
+}

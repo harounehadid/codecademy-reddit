@@ -1,86 +1,61 @@
-import './Post.css';
-import { Icons, Elements } from '../getResource';
+import styles from './Post.module.css';
+import { Icons } from '../getResource';
+import shorthandNumber from '../shorthand-numbers/shorthandNumbers';
+import timeSince from '../time-converter/timeConverter';
 
 const Post = props => {
-    let { postType, 
-          thumbnail, 
-          selftext,
-          url,
-          media, 
-          sbrNamePrefixed, 
+    let { postURL,
+          media,
           authorName, 
           time, 
           title, 
           ups, 
           commentsNum } = props;
 
-    const postURL = 'reddit.com';
-
     return (
-        <div className='Post
+        <div className={`${styles['post']}
                         flex-diplay
-                        margin-center'>
+                        margin-center`}>
 
-            <div className='vote-section
-                            flex-display
-                            flex-vertical-center
-                            secondary-font-family'>
+            <div className={`${styles['vote-section']}
+                             flex-diplay
+                             flex-vertical-center
+                             ${styles['secondary-font-family']}`}>
 
                 <img src={Icons.voteUp} alt='vote up' />
-                <p>{ups}</p>
+                <p>{shorthandNumber(ups)}</p>
                 <img src={Icons.voteDown} alt='vote down' />
 
             </div>
 
-            <div className='display-info'>
-                
-                <div className='publishing-info
-                                flex-display
-                                flex-vertical-center
-                                secondary-font-family'>
+            <div className={`${styles['display-info']}`}>
 
-                    <img src={require('../../resources/subreddit-dpp.svg').default} 
-                         alt='subreddit icon' 
-                         className='subreddit-pic'/>
-                    <p className='subreddit-name'>{sbrNamePrefixed}</p>
-                    <p className='publishing-extra-info'>.</p>
-                    <p className='publishing-extra-info'>Posted by u/{authorName}</p>
-                    <p className='publishing-extra-info'>13 hours ago</p>
-
-                </div>
-
-                <p className='title
-                              secondary-font'>
+                <p className={`${styles['title']}
+                              secondary-font`}>
                     {title}
                 </p>
 
-                <div className='content
-                                flex-diplay'>
-                    {media && <a href={url}>{media}</a>}
-                    {selftext && <p>{selftext}</p>}
+                <img src={media} 
+                     alt=''
+                     className={`${styles['content']}
+                                 flex-diplay`} />
 
-                    {selftext && <img className='text-fade' src={Elements.fade} alt='' />}
-                </div>
+                <div className={`${styles['actions']}
+                                 flex-diplay
+                                 flex-vertical-center
+                                 ${styles['secondary-font-family']}`}>
 
-                <div className='actions
-                                flex-diplay
-                                flex-vertical-center
-                                secondary-font-family'>
-
-                    <a href={postURL}
-                       className='comment
+                    <p className={`${styles['publishing-extra-info']}`}>
+                        Posted by u/{authorName}
+                    </p>
+                    <p className={`${styles['publishing-extra-info']}`}>{timeSince(time)}</p>
+                    <div
+                       className={`${styles['comment']}
                                   flex-diplay
-                                  flex-vertical-center'>
-                        <img src={Icons.comment} alt='comment' />
-                        <p>{commentsNum} comments</p>
-                    </a>
-                    <a href={postURL}
-                       className='share
-                                  flex-diplay
-                                  flex-vertical-center'>
-                        <img src={Icons.share} alt='share' />
-                        <p>share</p>
-                    </a>
+                                  flex-vertical-center`}>
+                        <img src={Icons.comment} alt='comments icon' />
+                        <p>{shorthandNumber(commentsNum)} comments</p>
+                    </div>
 
                 </div>
                 
