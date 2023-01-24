@@ -11,6 +11,11 @@
     margin-bottom: 14px;
 }
 
+.post:hover {
+    cursor: pointer;
+    outline: 1px solid #ff450090;
+}
+
 /* >> Vote section -------------------------- */
 .vote-section {
     flex-direction: column;
