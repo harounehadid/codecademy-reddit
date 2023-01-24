@@ -49,7 +49,7 @@ a {
 }
 
 a:hover {
-  background-color: var(--bg-color4);
+  outline: 1px solid var(--border-color2);
 }
 
 /* >> Styling Choices */

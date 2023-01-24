@@ -15,13 +15,9 @@
 .btn {
     height: calc(var(--header-height) * .7);
     width: fit-content;
-    padding: 0 5px;
+    padding: 0 15px;
     margin-right: 20px;
     color: var(--text-color1);
-}
-
-.btn:hover {
-    border: 1px solid var(--border-color1);
 }
 
 .home-btn-home-icon {
