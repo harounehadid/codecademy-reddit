@@ -2,9 +2,12 @@ import styles from './Post.module.css';
 import { Icons } from '../getResource';
 import shorthandNumber from '../shorthand-numbers/shorthandNumbers';
 import timeSince from '../time-converter/timeConverter';
+import { useSelector } from 'react-redux';
+import { selectPostByID } from '../posts/postsSlice';
 
 const Post = props => {
-    let { postURL,
+    let { id,
+          postURL,
           media,
           authorName, 
           time, 

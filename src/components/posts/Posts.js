@@ -1,55 +1,20 @@
 import styles from './posts.module.css';
 import Post from "../post/Post";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchPosts, selectPosts, selectPostByID } from './postsSlice';
 
 const Posts = () => {
     let endpoint = `https://www.reddit.com/r/pics.json`;
 
-    // Hold data about reddit posts
-    let [postsData, setPostsData] = useState([]);
+    const postsData = useSelector(selectPosts);
+    const dispatch = useDispatch();
 
-    // Fetch posts from the link
-    const fetchData = () => {
-        return async () => {
-            try {
-                const response = await fetch(endpoint);
+    useEffect(() => {
+        dispatch(fetchPosts(endpoint));
+    }, [endpoint]);
 
-                if (response.ok) {
-                    const body = await response.json();
-                    
-                    // Get only posts with images
-                    const filteredPosts = body.data.children.filter(fetchedPost => fetchedPost.data.post_hint === 'image');
-        
-                    const newPosts = filteredPosts.map(fetchedPost => {
-                        let data = {};
-        
-                        console.log(fetchedPost.data);
-        
-                        data.id = fetchedPost.data.id;
-                        data.postURL = 'https://www.reddit.com' + fetchedPost.data.permalink;
-                        data.media = fetchedPost.data.url_overridden_by_dest;
-                        data.authorName = fetchedPost.data.author;
-                        data.time = fetchedPost.data.created_utc;
-                        data.title = fetchedPost.data.title;
-                        data.ups = fetchedPost.data.ups;
-                        data.commentsNum = fetchedPost.data.num_comments;
-                        
-                        return data;
-                    });
-        
-                    setPostsData(newPosts);
-                }
-                else {
-                    throw new Error('Request Failed!');
-                }
-            }
-            catch(error) {
-                console.log(error);
-            }
-        }
-    }
-    // connecting fetch thunk to useEffect
-    useEffect(fetchData, [endpoint]);
+    //const post = useSelector(state => selectPostByID(state, '10w3xsz'));
 
     return (
         <div className={`flex-diplay
