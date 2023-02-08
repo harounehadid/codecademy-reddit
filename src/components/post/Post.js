@@ -1,9 +1,5 @@
 import styles from './Post.module.css';
 import { Icons } from '../getResource';
-import shorthandNumber from '../shorthand-numbers/shorthandNumbers';
-import timeSince from '../time-converter/timeConverter';
-import { useSelector } from 'react-redux';
-import { selectPostByID } from '../posts/postsSlice';
 
 const Post = props => {
     let { id,
@@ -13,12 +9,16 @@ const Post = props => {
           time, 
           title, 
           ups, 
-          commentsNum } = props;
+          commentsNum,
+          handleClick } = props;
 
     return (
         <div className={`${styles['post']}
                         flex-diplay
-                        margin-center`}>
+                        margin-center`}
+                        
+                        onClick={handleClick}
+                        >
 
             <div className={`${styles['vote-section']}
                              flex-diplay
@@ -26,7 +26,7 @@ const Post = props => {
                              ${styles['secondary-font-family']}`}>
 
                 <img src={Icons.voteUp} alt='vote up' />
-                <p>{shorthandNumber(ups)}</p>
+                <p>{ups}</p>
                 <img src={Icons.voteDown} alt='vote down' />
 
             </div>
@@ -51,13 +51,13 @@ const Post = props => {
                     <p className={`${styles['publishing-extra-info']}`}>
                         Posted by u/{authorName}
                     </p>
-                    <p className={`${styles['publishing-extra-info']}`}>{timeSince(time)}</p>
+                    <p className={`${styles['publishing-extra-info']}`}>{time}</p>
                     <div
                        className={`${styles['comment']}
                                   flex-diplay
                                   flex-vertical-center`}>
                         <img src={Icons.comment} alt='comments icon' />
-                        <p>{shorthandNumber(commentsNum)} comments</p>
+                        <p>{commentsNum} comments</p>
                     </div>
 
                 </div>

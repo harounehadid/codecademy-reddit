@@ -63,5 +63,6 @@ export const selectPostsFetchStatus = state => state.posts.postsFetchStatus;
 export const selectPostByID = (state, id) => {
     return state.posts.posts.find(post => post['id'] === id);
 }
+export const selectPostsIDs = state => state.posts.posts.map(post => post.id);
 
 export default postsSlice.reducer;
