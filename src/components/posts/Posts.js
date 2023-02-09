@@ -1,18 +1,21 @@
 import styles from './posts.module.css';
 import { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchPosts, selectPostsIDs } from './postsSlice';
+import { fetchPosts, selectPosts } from './postsSlice';
 import PostContainer from '../post/PostContainer';
+import { selectSearchTerm } from '../../features/searchbar/searchbarSlice';
 
 const Posts = () => {
-    let endpoint = `https://www.reddit.com/r/pics.json`;
-
-    const postIDs = useSelector(selectPostsIDs);
     const dispatch = useDispatch();
 
+    let endpoint = `https://www.reddit.com/r/pics.json`;
+
+    const fechtedPosts = useSelector(selectPosts);
     useEffect(() => {
         dispatch(fetchPosts(endpoint));
     }, [endpoint]);
+
+    const searchTerm = useSelector(selectSearchTerm);
 
     return (
         <div className={`flex-diplay
@@ -22,7 +25,9 @@ const Posts = () => {
                          ${styles['posts']}`}>
 
             {
-                postIDs.map(id => <PostContainer key={id} id={id} />)
+                fechtedPosts
+                    .filter(post => post.title.toLowerCase().includes(searchTerm.toLowerCase()))
+                    .map(post => <PostContainer key={post.id} id={post.id} />)
             }
 
         </div>

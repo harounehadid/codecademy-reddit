@@ -1,4 +1,4 @@
-import Searchbar from '../../features/searchbar/Searchbar';
+import SearchbarContainer from '../../features/searchbar/SearchbarContainer';
 import { Logo, Icons } from '../getResource';
 import styles from './Header.module.css';
 
@@ -12,7 +12,7 @@ const Header = () => {
 
             <img src={Logo.reddit} alt='Reddit Logo' className={`${styles['logo']}`} />
             
-            <Searchbar />
+            <SearchbarContainer />
 
             <nav className={`flex-diplay`}>
                 <a href='##'

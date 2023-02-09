@@ -1,7 +1,9 @@
 import './Searchbar.css';
 import { Icons } from '../../components/getResource';
 
-const Searchbar = () => {
+const Searchbar = props => {
+    const { handleChange, handleBlur } = props;
+
     return (
         <div className='Searchbar
                         flex-diplay
@@ -16,6 +18,8 @@ const Searchbar = () => {
                    id='searchbar' 
                    placeholder='Search Reddit'
                    className='Searchbar-input'
+                   onKeyDown={handleChange}
+                   onBlur={handleBlur}
                    />
             
         </div>
