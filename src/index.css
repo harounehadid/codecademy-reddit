@@ -52,6 +52,21 @@ a:hover {
   outline: 1px solid var(--border-color2);
 }
 
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color1);
+  box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff44009c;
+  border-radius: 3px;
+}
+
 /* >> Styling Choices */
 :root {
   /* >> Color Choices */
