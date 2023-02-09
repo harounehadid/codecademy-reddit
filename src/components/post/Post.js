@@ -16,7 +16,7 @@ const Post = props => {
         <div className={`${styles['post']}
                         flex-diplay
                         margin-center`}
-                        
+
                         onClick={handleClick}
                         >
 

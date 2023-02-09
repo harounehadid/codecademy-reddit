@@ -1,30 +1,40 @@
 import { useSelector } from "react-redux";
+import { useState } from "react";
 import { selectPostByID } from "../posts/postsSlice";
 import Post from "./Post";
 import shorthandNumber from '../shorthand-numbers/shorthandNumbers';
 import timeSince from '../time-converter/timeConverter';
+import FocusedPost from "./FocusedPost";
 
 const PostContainer = props => {
     const { id } = props;
+    const [focus, setFocus] = useState(false);
 
     const post = useSelector(state => selectPostByID(state, id));
 
-    const handleClick = () => {
-        console.log("Git Clicked");
-    }
+    const handleClick = () => setFocus(!focus);
     
     return (
-        <Post 
-            id={post.id}
-            postURL={post.postURL}
-            media={post.media}
-            authorName={post.authorName}
-            time={timeSince(post.time)}
-            title={post.title}
-            ups={shorthandNumber(post.ups)}
-            commentsNum={shorthandNumber(post.commentsNum)}
-            handleClick={handleClick}
+        <>
+            <Post 
+                id={post.id}
+                postURL={post.postURL}
+                media={post.media}
+                authorName={post.authorName}
+                time={timeSince(post.time)}
+                title={post.title}
+                ups={shorthandNumber(post.ups)}
+                commentsNum={shorthandNumber(post.commentsNum)}
+                handleClick={handleClick}
             />
+            {
+                focus && <FocusedPost 
+                            id={post.id}
+                            media={post.media}
+                            handleClick={handleClick}
+                         />
+            }
+        </>
     );
 }
 
