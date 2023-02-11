@@ -1,0 +1,22 @@
+.main {
+    box-sizing: content-box;
+    height: 24px;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .main {
+        animation: icon-spin infinite 1.7s linear;
+    }
+}
+
+@keyframes icon-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

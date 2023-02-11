@@ -7,7 +7,8 @@ export const Icons = {
     searchbar: require('../resources/search-icon.svg').default,
     voteUp: require('../resources/vote-up-icon.svg').default,
     voteDown: require('../resources/vote-down-icon.svg').default,
-    comment: require('../resources/comment-icon.svg').default
+    comment: require('../resources/comment-icon.svg').default,
+    loading: require('../resources/loading-icon.svg').default
 };
 
 const subreddits = `{

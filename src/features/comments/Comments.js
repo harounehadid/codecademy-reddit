@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchPostComments, selectComments } from "./commentsSlice";
+import { fetchPostComments, selectComments, selectCommentsFetchStatus } from "./commentsSlice";
 import timeSince from "../../components/time-converter/timeConverter";
 import Comment from "../comment/Comment.js";
 
@@ -14,7 +14,9 @@ const Comments = props => {
 
     useEffect(() => {
         dispatch(fetchPostComments(endpoint));
-    });
+    }, [dispatch]);
+
+    const status = useSelector(selectCommentsFetchStatus);
 
     return (
         <>
@@ -24,6 +26,7 @@ const Comments = props => {
                                                  author={comment.author}
                                                  commentBody={comment.comment}
                                                  time={timeSince(comment.time)}
+                                                 status={status}
                                         />)
             }
         </>

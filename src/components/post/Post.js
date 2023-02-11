@@ -1,5 +1,6 @@
 import styles from './Post.module.css';
 import { Icons } from '../getResource';
+import Loading from '../loading/Loading';
 
 const Post = props => {
     let { id,
@@ -10,7 +11,8 @@ const Post = props => {
           title, 
           ups, 
           commentsNum,
-          handleClick } = props;
+          handleClick,
+          status } = props;
 
     return (
         <div className={`${styles['post']}
@@ -20,49 +22,54 @@ const Post = props => {
                         onClick={handleClick}
                         >
 
-            <div className={`${styles['vote-section']}
-                             flex-diplay
-                             flex-vertical-center
-                             ${styles['secondary-font-family']}`}>
+            {
+                status === 'loading' ? <Loading /> :
+                <>
+                    <div className={`${styles['vote-section']}
+                                    flex-diplay
+                                    flex-vertical-center
+                                    ${styles['secondary-font-family']}`}>
 
-                <img src={Icons.voteUp} alt='vote up' />
-                <p>{ups}</p>
-                <img src={Icons.voteDown} alt='vote down' />
+                        <img src={Icons.voteUp} alt='vote up' />
+                        <p>{ups}</p>
+                        <img src={Icons.voteDown} alt='vote down' />
 
-            </div>
-
-            <div className={`${styles['display-info']}`}>
-
-                <p className={`${styles['title']}
-                              secondary-font`}>
-                    {title}
-                </p>
-
-                <img src={media} 
-                     alt=''
-                     className={`${styles['content']}
-                                 flex-diplay`} />
-
-                <div className={`${styles['actions']}
-                                 flex-diplay
-                                 flex-vertical-center
-                                 ${styles['secondary-font-family']}`}>
-
-                    <p className={`${styles['publishing-extra-info']}`}>
-                        Posted by u/{authorName}
-                    </p>
-                    <p className={`${styles['publishing-extra-info']}`}>{time}</p>
-                    <div
-                       className={`${styles['comment']}
-                                  flex-diplay
-                                  flex-vertical-center`}>
-                        <img src={Icons.comment} alt='comments icon' />
-                        <p>{commentsNum} comments</p>
                     </div>
 
-                </div>
-                
-            </div>
+                    <div className={`${styles['display-info']}`}>
+
+                        <p className={`${styles['title']}
+                                    secondary-font`}>
+                            {title}
+                        </p>
+
+                        <img src={media} 
+                            alt=''
+                            className={`${styles['content']}
+                                        flex-diplay`} />
+
+                        <div className={`${styles['actions']}
+                                        flex-diplay
+                                        flex-vertical-center
+                                        ${styles['secondary-font-family']}`}>
+
+                            <p className={`${styles['publishing-extra-info']}`}>
+                                Posted by u/{authorName}
+                            </p>
+                            <p className={`${styles['publishing-extra-info']}`}>{time}</p>
+                            <div
+                            className={`${styles['comment']}
+                                        flex-diplay
+                                        flex-vertical-center`}>
+                                <img src={Icons.comment} alt='comments icon' />
+                                <p>{commentsNum} comments</p>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </>
+            }
 
         </div>
     );

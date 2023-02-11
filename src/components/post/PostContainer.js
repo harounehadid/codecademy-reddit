@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { useState } from "react";
-import { selectPostByID } from "../posts/postsSlice";
+import { selectPostByID, selectPostsFetchStatus } from "../posts/postsSlice";
 import Post from "./Post";
 import shorthandNumber from '../shorthand-numbers/shorthandNumbers';
 import timeSince from '../time-converter/timeConverter';
@@ -13,6 +13,8 @@ const PostContainer = props => {
     const post = useSelector(state => selectPostByID(state, id));
 
     const handleClick = () => setFocus(!focus);
+
+    const status = useSelector(selectPostsFetchStatus);
     
     return (
         <>
@@ -26,6 +28,7 @@ const PostContainer = props => {
                 ups={shorthandNumber(post.ups)}
                 commentsNum={shorthandNumber(post.commentsNum)}
                 handleClick={handleClick}
+                status={status}
             />
             {
                 focus && <FocusedPost 

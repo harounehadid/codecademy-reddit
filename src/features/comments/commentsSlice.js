@@ -47,15 +47,18 @@ const commentsSlice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchPostComments.pending, (state, action) => {
+                console.log('loading in slice');
                 state.status = 'loading';
             })
             .addCase(fetchPostComments.fulfilled, (state, action) => {
-                state.state = 'succeed';
+                console.log('done is slice');
+                state.status = 'succeeded';
                 state.comments = action.payload;
             })
     }
 });
 
 export const selectComments = state => state.comments.comments;
+export const selectCommentsFetchStatus = state => state.comments.status;
 
 export default commentsSlice.reducer;
