@@ -8,8 +8,10 @@ const initialState = {
 export const fetchPosts = createAsyncThunk('posts/fetchPosts', 
     async endpoint => {
         try {
+            if (!endpoint) throw new Error('Link NOT Provided!');
+
             const response = await fetch(endpoint);
-    
+
             if (response.ok) {
                 const body = await response.json();
                 
@@ -37,8 +39,9 @@ export const fetchPosts = createAsyncThunk('posts/fetchPosts',
                 throw new Error('Request Failed!');
             }
         }
-        catch(error) {
-            console.log(error);
+        catch(err) {
+            console.error(err);
+            throw err; 
         }
 });
 
@@ -50,6 +53,9 @@ const postsSlice = createSlice({
         builder
             .addCase(fetchPosts.pending, (state, action) => {
                 state.postsFetchStatus = 'loading';
+            })
+            .addCase(fetchPosts.rejected, (state, action) => {
+                if (state.postsFetchStatus !== 'idle') state.postsFetchStatus = 'failed';
             })
             .addCase(fetchPosts.fulfilled, (state, action) => {
                 state.postsFetchStatus = 'succeeded';

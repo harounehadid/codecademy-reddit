@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+    position: relative;
+    width: 100px;
+    margin: 0 auto;
+    font-size: 1.1em;
+    padding: 5px 0;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    outline: 1px solid var(--border-color2);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}

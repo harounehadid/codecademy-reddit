@@ -34,8 +34,9 @@ export const fetchPostComments = createAsyncThunk('comments/fetchComments',
                 throw new Error('Request Failed!');
             }
         }
-        catch(error) {
-            console.log(error);
+        catch(err) {
+            console.error(err);
+            throw err;
         }
     }
 );
@@ -47,11 +48,12 @@ const commentsSlice = createSlice({
     extraReducers: builder => {
         builder
             .addCase(fetchPostComments.pending, (state, action) => {
-                console.log('loading in slice');
                 state.status = 'loading';
             })
+            .addCase(fetchPostComments.rejected, (state, action) => {
+                state.status = 'failed';
+            })
             .addCase(fetchPostComments.fulfilled, (state, action) => {
-                console.log('done is slice');
                 state.status = 'succeeded';
                 state.comments = action.payload;
             })
