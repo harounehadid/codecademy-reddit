@@ -15,7 +15,7 @@ const Header = () => {
             <SearchbarContainer />
 
             <nav className={`flex-diplay`}>
-                <a href='##'
+                <a href='/'
                    className={`${styles['btn']}
                                flex-diplay
                                flex-horizontal-center
