@@ -1,11 +1,24 @@
 .header {
     position: fixed;
-    top: 0;
+    top: 0;;
     background-color: var(--bg-color1);
     height: var(--header-height);
     box-shadow: 0px 1px 5px var(--border-color2);
     z-index: 99;
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
     justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 640px) {
+    .header {
+        flex-wrap: wrap;
+        height: fit-content;
+        padding: 5px;
+        gap: 10px;
+    }
 }
 
 .logo {
@@ -13,12 +26,33 @@
     margin-left: 20px;
 }
 
+@media only screen and (max-width: 438px) {
+    .logo {
+        margin: 0 auto;
+    }
+}
+
+.nav-element {
+    display: flex;
+}
+
 .btn {
     height: calc(var(--header-height) * .7);
-    width: fit-content;
+    width: 120px;
     padding: 0 15px;
     margin-right: 20px;
     color: var(--text-color1);
+}
+
+@media only screen and (max-width: 640px) {
+    .nav-element {
+        margin: 0 auto;
+    }
+    
+    .btn {
+        width: 49vw;
+        margin: 0;
+    }
 }
 
 .home-btn-home-icon {

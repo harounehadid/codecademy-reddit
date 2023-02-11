@@ -4,11 +4,7 @@ import styles from './Header.module.css';
 
 const Header = () => {
     return (
-        <div className={`${styles['header']}
-                        center
-                        fill-screen-width
-                        flex-diplay
-                        flex-vertical-center`}>
+        <div className={styles['header']}>
 
             <img src={Logo.reddit} alt='Reddit Logo' className={`${styles['logo']}`} />
             

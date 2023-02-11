@@ -31,8 +31,6 @@ const Posts = () => {
 
     const status = useSelector(selectPostsFetchStatus);
 
-    console.log(status);
-
     return (
         <div className={styles['container']}>
 
