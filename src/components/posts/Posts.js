@@ -5,21 +5,22 @@ import { fetchPosts, selectPosts } from './postsSlice';
 import PostContainer from '../post/PostContainer';
 import { selectSearchTerm } from '../../features/searchbar/searchbarSlice';
 import { getSubredditLink } from '../getResource';
+import { selectEndpoint, updateEndpoint } from '../subreddits/subredditEndpointSlice';
 
 const Posts = () => {
     const dispatch = useDispatch();
 
-    let endpoint;
+    const endpoint = useSelector(selectEndpoint);
 
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * 3);
-        endpoint = getSubredditLink(randomIndex);
+        dispatch(updateEndpoint(getSubredditLink(randomIndex)));
     }, []);
 
     const fechtedPosts = useSelector(selectPosts);
     
     useEffect(() => {
-        dispatch(fetchPosts(endpoint));
+        if (endpoint) dispatch(fetchPosts(endpoint));
     }, [endpoint, dispatch]);
 
     const searchTerm = useSelector(selectSearchTerm);

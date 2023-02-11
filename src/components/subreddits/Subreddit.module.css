@@ -1,0 +1,8 @@
+.main {
+    height: 100%;
+    min-width: 75px;
+    margin: 0 12px;
+    font-size: 1.2em;
+    outline: 1px solid #ff44009c;
+    text-align: center;
+}
