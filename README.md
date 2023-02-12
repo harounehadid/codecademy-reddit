@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+# Codecademy Reddit Clone Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## The Context Behind The Project
+This project is a portfolio project requested by Codecademy, the project is about creating a minimalistic, reddit lookalike web application using all the knowledge gethered throught the course.
+<br>
+<br>
+<strong>Here is a live version</strong> https://sweet-wisp-157525.netlify.app/
 
-## Available Scripts
+## Technologies Used
+* React ^18.2.0
+* Reduxjs/toolkit ^1.9.1
+* React-redux ^8.0.5
+* React-router-dom ^6.8.1
+* Jest
 
-In the project directory, you can run:
+## How to Run The Project
+1. After forking and cloning the project to your local repository you can run the command ```npm install``` to install any dependencies you need.
+2. After you can simply use the command ```npm start``` to run the project in your local machine.
 
-### `npm start`
+## Wireframes
+![wireframe-1](https://user-images.githubusercontent.com/75623924/218326662-03259421-753d-4369-92cf-302a42573bb9.png)
+![wireframe-2](https://user-images.githubusercontent.com/75623924/218326666-75495990-d0e3-4430-a062-645428b38d42.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Note: There are some slight differences compare to the final product due to feature cuts and other factors
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
+Here are the list of features included in the application
+1. Displaying posts of subreddits
+2. Displaying the comments of a post
+3. Choosing from a preset of subreddits
+4. Filtering what posts to show based on the terms fed to the searchbar
+5. Showing loading state
+6. The ability to leave an error state (e.g. the ability to refresh the pages if for some reason the application wasn't able to get the data it needs)
+7. Add some testing
+8. The app can adapt to all screen sizes
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Future work
+For the time being the project is in its final form because there is no compelling reason to do so; but if I was going to add more here are a list of things I might've added
+* The ability to go the next page on each reddit
+* Giving the user the ability to add the subreddits they want to browse
+* Having a better user experience
+* Having a mixture of posts comming from different subreddits and give the user the ability to control result
